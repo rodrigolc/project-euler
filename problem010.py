@@ -1,24 +1,21 @@
 #!/bin/env python3
+import math
 
-primes = []
 
-def prime(num): #should be called in order. eg calling (25) before
-		## (5) will break it
-	for prime in primes:
-		if num == prime:
-			return True
-		elif num % prime == 0:
+def prime(num): #version from previous c++ implementation by yours truly
+				#from original code: "// THIS IS MAGIC, GUYS! FAST AS HELL."
+				#oh, younger me.
+	if num % 2 == 0:
+		return False
+	for i in range(3,int(math.ceil(math.sqrt(num))) + 1,2):
+		if num % i == 0:
 			return False
-	primes.append(num)
 	return True
+
 psum = 2
-counter = 1 #account for 2
-number = 1 # would start with 3, but will inc by 2 each iteraction
-prime(2) # get 2 into the prime pool (not that it would change anything)
+number = 3 # would start with 3, but will inc by 2 each iteraction
 while number < 2000000:
-	number += 2
 	if prime(number):
 		psum += number
-
+	number += 2
 print(psum)
-
