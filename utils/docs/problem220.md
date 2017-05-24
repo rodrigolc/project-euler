@@ -1,0 +1,35 @@
+![projecteuler.net](images/print_page_logo.png)
+
+## Heighway Dragon
+
+### Problem 220 ![](images/icon_info.png)Published on Saturday, 6th December
+2008, 09:00 am; Solved by 1743;  
+Difficulty rating: 55%
+
+Let **_D_**0 be the two-letter string "Fa". For n≥1, derive **_D_**n from
+**_D_**n-1 by the string-rewriting rules:
+
+"a" → "aRbFR"  
+"b" → "LFaLb"
+
+Thus, **_D_**0 = "Fa", **_D_**1 = "FaRbFR", **_D_**2 = "FaRbFRRLFaLbFR", and
+so on.
+
+These strings can be interpreted as instructions to a computer graphics
+program, with "F" meaning "draw forward one unit", "L" meaning "turn left 90
+degrees", "R" meaning "turn right 90 degrees", and "a" and "b" being ignored.
+The initial position of the computer cursor is (0,0), pointing up towards
+(0,1).
+
+Then **_D_**n is an exotic drawing known as the _Heighway Dragon_ of order
+_n_. For example, **_D_**10 is shown below; counting each "F" as one step, the
+highlighted spot at (18,16) is the position reached after 500 steps.
+
+![](project/images/p220.gif)
+
+What is the position of the cursor after 1012 steps in **_D_**50 ?  
+Give your answer in the form _x_,_y_ with no spaces.
+
+  
+  
+

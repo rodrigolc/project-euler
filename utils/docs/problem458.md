@@ -1,0 +1,21 @@
+![projecteuler.net](images/print_page_logo.png)
+
+## Permutations of Project
+
+### Problem 458 ![](images/icon_info.png)Published on Sunday, 9th February
+2014, 07:00 am; Solved by 539;  
+Difficulty rating: 30%
+
+Consider the alphabet A made out of the letters of the word "project":
+A={c,e,j,o,p,r,t}.  
+Let T(n) be the number of strings of length n consisting of letters from A
+that do not have a substring that is one of the 5040 permutations of
+"project".
+
+T(7)=77-7!=818503.
+
+Find T(1012). Give the last 9 digits of your answer.
+
+  
+  
+
