@@ -21,29 +21,34 @@ numbers_str = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48"""
 
-numbers = [[int(num) for num in line.split(" ")] for line in numbers_str.split("\n")]
+numbers = [[int(num) for num in line.split(" ")]
+           for line in numbers_str.split("\n")]
 
 mul = 0
 for i in range(20):
-	for j in range(20):
-		#horizontal
-		if j + 3 < 20:
-			mul_ = numbers[i][j] * numbers[i][j+1] * numbers[i][j+2] * numbers[i][j+3]
-			if mul_ > mul:
-				mul = mul_
-		#vertical
-		if i + 3 < 20:
-			mul_ = numbers[i][j] * numbers[i+1][j] * numbers[i+2][j] * numbers[i+3][j]
-			if mul_ > mul:
-				mul = mul_
-		#downward-right diagonal
-		if j + 3 < 20 and i + 3 < 20:
-			mul_ = numbers[i][j] * numbers[i+1][j+1] * numbers[i+2][j+2] * numbers[i+3][j+3]
-			if mul_ > mul:
-				mul = mul_
-		#downward-left diagonal
-		if i - 3 >= 0 and j + 3 < 20:
-			mul_ = numbers[i][j] * numbers[i-1][j+1] * numbers[i-2][j+2] * numbers[i-3][j+3]
-			if mul_ > mul:
-				mul = mul_
+    for j in range(20):
+        # horizontal
+        if j + 3 < 20:
+            mul_ = numbers[i][j] * numbers[i][j + 1] * \
+                numbers[i][j + 2] * numbers[i][j + 3]
+            if mul_ > mul:
+                mul = mul_
+        # vertical
+        if i + 3 < 20:
+            mul_ = numbers[i][j] * numbers[i + 1][j] * \
+                numbers[i + 2][j] * numbers[i + 3][j]
+            if mul_ > mul:
+                mul = mul_
+        # downward-right diagonal
+        if j + 3 < 20 and i + 3 < 20:
+            mul_ = numbers[i][j] * numbers[i + 1][j + 1] * \
+                numbers[i + 2][j + 2] * numbers[i + 3][j + 3]
+            if mul_ > mul:
+                mul = mul_
+        # downward-left diagonal
+        if i - 3 >= 0 and j + 3 < 20:
+            mul_ = numbers[i][j] * numbers[i - 1][j + 1] * \
+                numbers[i - 2][j + 2] * numbers[i - 3][j + 3]
+            if mul_ > mul:
+                mul = mul_
 print mul
